@@ -4,6 +4,41 @@
   
   
   <entry>
+    <title>我的世界IPv4公网联机教程</title>
+    <link href="/2025/05/24/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/"/>
+    <url>/2025/05/24/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p><strong><span style="color: red;ont-size: 30px">注意：本教程有一定门槛，不建议无任何网络基础知识的用户操作，如果操作不慎可能会导致你的网络出现故障。特此说明。如由于自身原因误操作导致网络故障请寻求专业装维人员的帮助！宽带故障问题请勿在下方留言！</span></strong><br><span style="color:rgb(9, 255, 0)">为了兼容老系统，本教程全程使用Windows10 21H2版作为演示，但由于Windows的版本和新系统的版本号跨度较大，可能略有差异！</span><br><strong>本教程不适用于校园网。校园网可以遗憾离场了</strong><br><em><strong>视频教程地址：<a href="https://www.bilibili.com/video/BV1UM411u7NU/">点击跳转</a></strong></em></p></blockquote><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote><p>一台可以上网的电脑。<br>一条有公网IPv4的家庭宽带。<br>路由器，光猫的管理员账号和密码。（光猫密码一般在光猫背面，路由器管理密码一般为WiFi密码）<br>Minecraft Java任意版本（教程使用1.21.4版本作为演示）。</p></blockquote><h2 id="了解自己的网络拓扑"><a href="#了解自己的网络拓扑" class="headerlink" title="了解自己的网络拓扑"></a>了解自己的网络拓扑</h2><blockquote><p>图中展示了两种家庭的简化<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE/2104865">网络拓扑图</a><br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%AE%B6%E7%94%A8%E7%BD%91%E6%8B%93%E6%89%91%E5%9B%BE.png" alt="家庭简化网络拓扑图"><br>教程将使用上方拓扑结构进行演示。下方拓扑大同小异。</p></blockquote><h2 id="是否拥有公网IPv4"><a href="#是否拥有公网IPv4" class="headerlink" title="是否拥有公网IPv4"></a>是否拥有公网IPv4</h2><blockquote><p>点击<a href="https://www.ip138.com/">这里</a>，浏览器会检测你的外网访问地址。我们需要记录住网站上给出的带蓝色标记和下划线的那串数字，例如我的IP是这个：<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%9A%84IP%E6%9F%A5%E8%AF%A2.png" alt="IP地址"></p></blockquote><h3 id="光猫操作"><a href="#光猫操作" class="headerlink" title="光猫操作"></a>光猫操作</h3><blockquote><p>接下来我们需要登录自己的光猫确认自己是否是公网IPv4地址。光猫的登陆地址一般都会写在光猫背面的贴纸上。例如：192.168.1.1。我们打开浏览器，在地址栏输入这个地址。如果你可以进入页面，那么我们继续往下看，如果你无法进入，显示无法访问此页面。那么有可能是网关地址改变或你的网络是路由器拨号，获取更改后的光猫地址请看下方“开始联机中的路由器操作”，如果你确定你的光猫是桥接模式请跳转至下方的路由器操作。<br>这里我以电信的天翼网关为例，使用光猫背面的用户名密码登录后，点击高级设置-网关信息。我们需要看的是Wan IP这个值（如果你是其它的猫，界面和我不一样，可以在设置内翻找一番。当然有的猫普通用户是看不到这些信息的。请向运营商寻求超管账密。），比如我的是：<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E7%BD%91%E5%85%B3IP.png" alt="光猫WanIP"><br>如果此处的值，与你在网页上查到的值是一致的，那么恭喜你，你是IPV4公网。如果不一致可以遗憾离场了。</p></blockquote><h3 id="路由器操作"><a href="#路由器操作" class="headerlink" title="路由器操作"></a>路由器操作</h3><blockquote><p>选择看这一条的，你的宽带很可能是桥接模式。我们只需要看路由器的上网IP即可知道自己是否为公网。路由器的地址可以在已连接到此路由器的设备上查看到。比如我们使用电脑，Win+R打开运行，输入cmd调出命令行，在命令行输入 <code>ipconfig</code>后回车，我们可以看到如下信息：</p></blockquote><figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">以太网适配器 以太网</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation"></span><br>   <span class="hljs-attribute">连接特定的 DNS 后缀 . . . . . . .</span><span class="hljs-punctuation"> :</span> <span class="hljs-string">lan</span><br>   <span class="hljs-attribute">IPv4 地址 . . . . . . . . . . . .</span><span class="hljs-punctuation"> :</span> <span class="hljs-string">192.168.3.149</span><br>   <span class="hljs-attribute">子网掩码  . . . . . . . . . . . .</span><span class="hljs-punctuation"> :</span> <span class="hljs-string">255.255.255.0</span><br>   <span class="hljs-attribute">默认网关. . . . . . . . . . . . .</span><span class="hljs-punctuation"> :</span> <span class="hljs-string">192.168.3.1</span><br></code></pre></td></tr></table></figure><blockquote><p>默认网关就是路由器的地址。我们打开浏览器，输入这个地址，即可访问你的路由器页面。<br>进入路由器以后,我们找有关上网方式相关的设置，找到PPPOE或拨号上网，我们找到IP地址。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E8%B7%AF%E7%94%B1%E5%99%A8IP.png" alt="路由器WanIP"><br>如果与你网站查到的一致则是公网，如果不一致则遗憾离场。</p></blockquote><h2 id="开始联机"><a href="#开始联机" class="headerlink" title="开始联机"></a>开始联机</h2><blockquote><p>你能看到这里，很显然你是拥有IPv4公网的，我们进行接下来的操作，我们首先启动游戏，然后进入存档后选择对局域网开放。这里需要记住对局域网开放时左下角弹出的端口。由于演示版本为高版本可以自定义端口，我们如果要自定义建议端口号不少于五位，避免冲突。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%AF%B9%E5%B1%80%E5%9F%9F%E7%BD%91%E5%BC%80%E6%94%BE%E6%93%8D%E4%BD%9C.png" alt="对局域网开放"><br>开放完后我们进行接下来的操作。</p></blockquote><h3 id="路由器操作-1"><a href="#路由器操作-1" class="headerlink" title="路由器操作"></a>路由器操作</h3><blockquote><p>获取路由器的登录地址的方法已经在上方有说明，这里不过多赘述。我们进到路由器以后，找到端口转发，端口映射一类的功能。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91.png" alt="端口转发"><br>这里有些值需要注意。IP地址为你电脑的IP地址，内部端口号必须为你游戏显示的端口号，外部端口号可以自定义，建议使用<code>25565</code>，协议为TCP，如果某些语音模组走UDP，也可添加对应UDP协议的转发。如果你是路由器拨号上网的，那么到了这一步，你的朋友就应该就可以通过你的公网IPv4地址连接到你的世界了。如果无法连接请跳转到后面的无法连接。</p></blockquote><h3 id="光猫操作-1"><a href="#光猫操作-1" class="headerlink" title="光猫操作"></a>光猫操作</h3><blockquote><p>我们需要先获取光猫分配给路由器的IP地址，这一点可以在路由器的上网方式中找到。上网方式为静态获取或DHCP，如果使用DHCP获取，建议改为静态，按照DHCP获取的值设置静态即可。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E9%9D%99%E6%80%81%E8%8E%B7%E5%8F%96.png" alt="光猫分配给路由器的IP"><br>例如我这个猫给路由器的IP地址是192.168.2.2(大家的猫如果是192.168.1.X的则把我这个看作192.168.1.2即可。我这个是改过光猫地址的)，我们登录到光猫中，依然找端口映射/端口转发相关设置。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%85%89%E7%8C%AB%E6%98%A0%E5%B0%84%E6%93%8D%E4%BD%9C.png" alt="光猫映射操作"><br>局域网IP我们需要填路由器的上网IP，协议依旧跟上方一致，这里的内部端口需要与上方路由器设置的外部端口一致，外部端口建议设置为25565.如果使用UDP协议，则添加对应UDP协议的转发。到这里，使用光猫拨号的你应该也能让你的朋友进入你的世界了。如果无法连接请跳转到后面的无法连接。</p></blockquote><h2 id="无法连接"><a href="#无法连接" class="headerlink" title="无法连接"></a>无法连接</h2><h3 id="防火墙问题"><a href="#防火墙问题" class="headerlink" title="防火墙问题"></a>防火墙问题</h3><h4 id="光猫或路由器防火墙问题"><a href="#光猫或路由器防火墙问题" class="headerlink" title="光猫或路由器防火墙问题"></a>光猫或路由器防火墙问题</h4><blockquote><p>光猫的防火墙可以进入光猫，找关于防火墙相关的设置进行关掉，当然有些光猫是需要超级管理员才可以进行这些操作的，如果你没有超级管理员密码则可以尝试询问运营商或当地装维人员。<br>路由器的防火墙则是在路由器设置中找到防火墙相关设置，关闭防火墙即可。</p></blockquote><h4 id="电脑防火墙问题"><a href="#电脑防火墙问题" class="headerlink" title="电脑防火墙问题"></a>电脑防火墙问题</h4><blockquote><p>进入控制面板，找到系统和安全，点击Windows Defender防火墙，点击关闭Windows Defender防火墙。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/Windows%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png" alt="Windows防火墙"><br>如果还无法联机，建议朋友也进行这一操作。</p></blockquote><h3 id="正版离线问题"><a href="#正版离线问题" class="headerlink" title="正版离线问题"></a>正版离线问题</h3><blockquote><p>如果你的游戏是正版，那么你需要将游戏设置为离线模式，否则离线玩家无法联机。（注意：离线由于不绑定玩家唯一标识符【UUID】，很可能造成背包数据丢失，推荐下线时将所有物品存到箱子中。）<br>需要这两个模组任选其一：<br><a href="https://www.mcmod.cn/class/11373.html">自定义LAN局域网联机服务器</a><br><a href="https://www.mcmod.cn/class/2754.html">自定义局域网联机</a><br>两个模组百科页面均有详细的使用介绍介绍。<br>如果打开聊天栏就出现闪退问题的话，尝试使用<a href="https://www.mcmod.cn/class/6756.html">禁用聊天举报</a> </p></blockquote><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><blockquote><p>教程到这里就已经结束了，你和你的朋友应该已经顺利连上机了，如果此教程对你有帮助的话，别忘了点开上方的视频给我一个一键三联哦！这样是对我最大的支持！！！我是灭天神话_666，咱们下篇文章再见！！！</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>联机教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>我的世界</tag>
+      
+      <tag>Minecraft</tag>
+      
+      <tag>公网</tag>
+      
+      <tag>IPv4</tag>
+      
+      <tag>联机</tag>
+      
+      <tag>教程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Windows的下载和安装[PE工具装机篇]</title>
     <link href="/2022/10/27/Windows%E7%9A%84%E5%AE%89%E8%A3%85/"/>
     <url>/2022/10/27/Windows%E7%9A%84%E5%AE%89%E8%A3%85/</url>
