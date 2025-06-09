@@ -19,37 +19,42 @@
   <meta name="author" content="灭天神话_666">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Minecraft IPv4公网联机教程：稳定低延迟的联机方式">
+    <meta name="description" content="使用natfrp实现我的世界远程联机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的世界IPv4公网联机教程">
-<meta property="og:url" content="https://blog.mietianshenhua.online/2025/05/24/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/index.html">
+<meta property="og:title" content="NatFrp内网穿透实现我的世界联机">
+<meta property="og:url" content="https://blog.mietianshenhua.online/2025/06/09/natfrp%E8%81%94%E6%9C%BA%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="灭天神话_666的文章页">
-<meta property="og:description" content="Minecraft IPv4公网联机教程：稳定低延迟的联机方式">
+<meta property="og:description" content="使用natfrp实现我的世界远程联机">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%AE%B6%E7%94%A8%E7%BD%91%E6%8B%93%E6%89%91%E5%9B%BE.png">
-<meta property="og:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%9A%84IP%E6%9F%A5%E8%AF%A2.png">
-<meta property="og:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E7%BD%91%E5%85%B3IP.png">
-<meta property="og:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E8%B7%AF%E7%94%B1%E5%99%A8IP.png">
-<meta property="og:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%AF%B9%E5%B1%80%E5%9F%9F%E7%BD%91%E5%BC%80%E6%94%BE%E6%93%8D%E4%BD%9C.png">
-<meta property="og:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91.png">
-<meta property="og:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E9%9D%99%E6%80%81%E8%8E%B7%E5%8F%96.png">
-<meta property="og:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%85%89%E7%8C%AB%E6%98%A0%E5%B0%84%E6%93%8D%E4%BD%9C.png">
-<meta property="og:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/Windows%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png">
-<meta property="article:published_time" content="2025-05-23T21:27:00.000Z">
-<meta property="article:modified_time" content="2025-05-23T21:37:06.330Z">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/natfrp%E6%B3%A8%E5%86%8C.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E5%AE%9E%E5%90%8D.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E7%AD%BE%E5%88%B0.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E7%99%BB%E9%99%86%E5%89%8D.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E7%99%BB%E9%99%86%E5%90%8E.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E8%81%94%E7%BD%91%E8%AF%B7%E6%B1%82.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E7%AB%AF%E5%8F%A3.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E5%88%9B%E5%BB%BA%E9%9A%A7%E9%81%93.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E5%BC%80%E5%90%AF%E9%9A%A7%E9%81%93.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E9%9A%A7%E9%81%93%E6%9B%B4%E6%94%B9.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E5%AE%A2%E6%9C%BA%E6%BC%94%E7%A4%BA.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E6%88%90%E5%8A%9F.png">
+<meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/Windows%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png">
+<meta property="article:published_time" content="2025-06-09T07:44:00.000Z">
+<meta property="article:modified_time" content="2025-06-09T08:07:44.816Z">
 <meta property="article:author" content="灭天神话_666">
 <meta property="article:tag" content="我的世界">
 <meta property="article:tag" content="Minecraft">
-<meta property="article:tag" content="公网">
-<meta property="article:tag" content="IPv4">
 <meta property="article:tag" content="联机">
 <meta property="article:tag" content="教程">
+<meta property="article:tag" content="natrfp">
+<meta property="article:tag" content="内网穿透">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://blog.mietianshenhua.online/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%AE%B6%E7%94%A8%E7%BD%91%E6%8B%93%E6%89%91%E5%9B%BE.png">
+<meta name="twitter:image" content="https://blog.mietianshenhua.online/img/natfrp/natfrp%E6%B3%A8%E5%86%8C.png">
   
   
   
-  <title>我的世界IPv4公网联机教程 - 灭天神话_666的文章页</title>
+  <title>NatFrp内网穿透实现我的世界联机 - 灭天神话_666的文章页</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +208,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我的世界IPv4公网联机教程"></span>
+            <span id="subtitle" data-typed-text="NatFrp内网穿透实现我的世界联机"></span>
           
         </div>
 
@@ -214,8 +219,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-24 05:27" pubdate>
-          2025年5月24日 凌晨
+        <time datetime="2025-06-09 15:44" pubdate>
+          2025年6月9日 下午
         </time>
       </span>
     
@@ -226,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          2.1k 字
         
       </span>
     
@@ -237,7 +242,7 @@
         
         
         
-          20 分钟
+          22 分钟
         
       </span>
     
@@ -274,50 +279,57 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">我的世界IPv4公网联机教程</h1>
+            <h1 id="seo-header">NatFrp内网穿透实现我的世界联机</h1>
             
             
               <div class="markdown-body">
                 
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p><strong><span style="color: red;ont-size: 30px">注意：本教程有一定门槛，不建议无任何网络基础知识的用户操作，如果操作不慎可能会导致你的网络出现故障。特此说明。如由于自身原因误操作导致网络故障请寻求专业装维人员的帮助！宽带故障问题请勿在下方留言！</span></strong><br><span style="color:rgb(9, 255, 0)">为了兼容老系统，本教程全程使用Windows10 21H2版作为演示，但由于Windows的版本和新系统的版本号跨度较大，可能略有差异！</span><br><strong>本教程不适用于校园网。校园网可以遗憾离场了</strong><br><em><strong>视频教程地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1UM411u7NU/">点击跳转</a></strong></em></p>
+<p><strong><span style="color: red;">本文章仅教学natfrp的使用方法，与樱花内网穿透没有任何利益和技术相关往来或合作。如遇到樱花软件或使用上的问题，请寻求官方帮助！！！UP没有义务也没有办法解决相关问题。</span></strong><br><strong><span style="color:rgb(9,255,0)">本教程全程使用Windows10 21H2版作为演示,教程中的界面可能会与你看到文章时有所不同，请以实际软件界面为准。如软件界面变动请自行对照教程相关参数进行填写。</span></strong><br><strong>本教程不适用于部分校园网。校园网不允许内网穿透相关流量出站的话，什么内网穿透都是出不去的。</strong><br><em><strong>视频教程地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1DdF4eJEBm/">点击跳转</a></strong></em></p>
 </blockquote>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
-<p>一台可以上网的电脑。<br>一条有公网IPv4的家庭宽带。<br>路由器，光猫的管理员账号和密码。（光猫密码一般在光猫背面，路由器管理密码一般为WiFi密码）<br>Minecraft Java任意版本（教程使用1.21.4版本作为演示）。</p>
+<h1 id="什么是内网穿透"><a href="#什么是内网穿透" class="headerlink" title="什么是内网穿透"></a>什么是内网穿透</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/1897970736381026525">内网穿透</a>，顾名思义，就是将内网的设备或数据，映射到公网上，让公网上的设备可以访问到这些内网设备。</p>
 </blockquote>
-<h2 id="了解自己的网络拓扑"><a href="#了解自己的网络拓扑" class="headerlink" title="了解自己的网络拓扑"></a>了解自己的网络拓扑</h2><blockquote>
-<p>图中展示了两种家庭的简化<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE/2104865">网络拓扑图</a><br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%AE%B6%E7%94%A8%E7%BD%91%E6%8B%93%E6%89%91%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="家庭简化网络拓扑图"><br>教程将使用上方拓扑结构进行演示。下方拓扑大同小异。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="注册网站-实名-获取流量"><a href="#注册网站-实名-获取流量" class="headerlink" title="注册网站/实名/获取流量"></a>注册网站/实名/获取流量</h2><blockquote>
+<p><em><strong>natfrp官网：<a target="_blank" rel="noopener" href="https://www.natfrp.com/">点击跳转</a></strong></em><br>进入官网后点击注册账号，填写必要信息后点击注册。<br><img src="/img/natfrp/natfrp%E6%B3%A8%E5%86%8C.png" srcset="/img/loading.gif" lazyload alt="natfrp注册页"><br>填写完相关信息后点击注册后，然后回到主页，点击管理面板。登录你刚才注册的账号后。点击上方的用户，实名认证进行实名。不实名你是无法使用它的服务的。实名需要支付宝支付一元。<br><img src="/img/natfrp/%E5%AE%9E%E5%90%8D.png" srcset="/img/loading.gif" lazyload alt="实名"><br><strong><span style="color: red;">实名必须年满18岁</span></strong><br>实名完后回到主页，免费帐户的话可以通过右侧的签到来获取可用流量。免费帐户只有10Mbps的带宽和两条隧道。对于原版联机和部分整合包完全够用。<br><img src="/img/natfrp/%E7%AD%BE%E5%88%B0.png" srcset="/img/loading.gif" lazyload alt="natfrp注册页"><br>如果你感觉流量，节点，带宽不够你的使用或有更好的体验，可以选择付费套餐。这里不过多赘述。<br><strong><span style="color: red;">注意：流量消耗取决于你游玩的内容，原版是很省流的，整合包的话会流量消耗会稍微多一些，部分模组也会需要频繁的交换数据导致流量跑得很快。这些都属于正常现象。</span></strong></p>
 </blockquote>
-<h2 id="是否拥有公网IPv4"><a href="#是否拥有公网IPv4" class="headerlink" title="是否拥有公网IPv4"></a>是否拥有公网IPv4</h2><blockquote>
-<p>点击<a target="_blank" rel="noopener" href="https://www.ip138.com/">这里</a>，浏览器会检测你的外网访问地址。我们需要记录住网站上给出的带蓝色标记和下划线的那串数字，例如我的IP是这个：<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%9A%84IP%E6%9F%A5%E8%AF%A2.png" srcset="/img/loading.gif" lazyload alt="IP地址"></p>
+<h2 id="软件下载-安装"><a href="#软件下载-安装" class="headerlink" title="软件下载/安装"></a>软件下载/安装</h2><blockquote>
+<p>点击页面上方的服务，选择软件下载。这里以Windows为例：<br><img src="/img/natfrp/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD.png" srcset="/img/loading.gif" lazyload alt="软件下载"><br>如果遇到无法下载的问题请按照页面提示操作。下载下来被杀毒软件删掉的建议先暂时关闭杀毒。<br><strong><span style="color: red;">注意：软件下载不要使用第三方下载接管下载（IDM,NDM,迅雷等）</span></strong><br>下载下来以后双击运行安装程序进行安装，全程下一步即可（无法更改软件安装路径，没有自启动勾选）</p>
 </blockquote>
-<h2 id="光猫操作"><a href="#光猫操作" class="headerlink" title="光猫操作"></a>光猫操作</h2><blockquote>
-<p>接下来我们需要登录自己的光猫确认自己是否是公网IPv4地址。光猫的登陆地址一般都会写在光猫背面的贴纸上。例如：192.168.1.1。我们打开浏览器，在地址栏输入这个地址。如果你可以进入页面，那么我们继续往下看，如果你无法进入，显示无法访问此页面。那么有可能是网关地址改变或你的网络是路由器拨号，获取更改后的光猫地址请看下方“开始联机中的路由器操作”，如果你确定你的光猫是桥接模式请跳转至下方的路由器操作。<br>这里我以电信的天翼网关为例，使用光猫背面的用户名密码登录后，点击高级设置-网关信息。我们需要看的是Wan IP这个值（如果你是其它的猫，界面和我不一样，可以在设置内翻找一番。当然有的猫普通用户是看不到这些信息的。请向运营商寻求超管账密。），比如我的是：<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E7%BD%91%E5%85%B3IP.png" srcset="/img/loading.gif" lazyload alt="光猫WanIP"><br>如果此处的值，与你在网页上查到的值是一致的，那么恭喜你，你是IPV4公网。如果不一致可以遗憾离场了。</p>
+<h1 id="开始联机操作"><a href="#开始联机操作" class="headerlink" title="开始联机操作"></a>开始联机操作</h1><h2 id="主机的操作"><a href="#主机的操作" class="headerlink" title="主机的操作"></a>主机的操作</h2><h3 id="登陆软件"><a href="#登陆软件" class="headerlink" title="登陆软件"></a>登陆软件</h3><blockquote>
+<p>我们回到官网首页，找到复制访问密钥，我们点击后就会复制密钥，回到软件后粘贴我们复制的密钥，点击登录即可登录成功。<br><img src="/img/natfrp/%E7%99%BB%E9%99%86%E5%89%8D.png" srcset="/img/loading.gif" lazyload alt="登陆前"><br><strong><span style="color: red;">注意：请不要将自己的密钥交给不信任的人，出问题了平台找的是在平台实名的用户。如用该服务搭建不合规或违法内容，轻则账号封禁，重则局子喝茶。如密钥已经告诉过他人，可前往用户-用户信息页找到刷新访问密钥。使用旧密钥登陆的客户端都将被强制下线。</span></strong><br><img src="/img/natfrp/%E7%99%BB%E9%99%86%E5%90%8E.png" srcset="/img/loading.gif" lazyload alt="登陆后"></p>
 </blockquote>
-<h2 id="路由器操作"><a href="#路由器操作" class="headerlink" title="路由器操作"></a>路由器操作</h2><blockquote>
-<p>选择看这一条的，你的宽带很可能是桥接模式。我们只需要看路由器的上网IP即可知道自己是否为公网。路由器的地址可以在已连接到此路由器的设备上查看到。比如我们使用电脑，Win+R打开运行，输入cmd调出命令行，在命令行输入 <code>ipconfig</code>后回车，我们可以看到如下信息：</p>
+<h3 id="开启多人游戏"><a href="#开启多人游戏" class="headerlink" title="开启多人游戏"></a>开启多人游戏</h3><blockquote>
+<p>我们打开想要联机的整合包或版本，启动后进入存档，ECS选择对局域网开放，如果弹出如下界面建议两项全打勾。<br><img src="/img/natfrp/%E8%81%94%E7%BD%91%E8%AF%B7%E6%B1%82.png" srcset="/img/loading.gif" lazyload alt="联网请求"><br>对局域网开放后，游戏左下角会弹出开放后的端口号。主机的游戏操作到这里就已经结束了。<br><img src="/img/natfrp/%E7%AB%AF%E5%8F%A3.png" srcset="/img/loading.gif" lazyload alt="端口"></p>
 </blockquote>
-<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">以太网适配器 以太网</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation"></span><br>   <span class="hljs-attribute">连接特定的 DNS 后缀 . . . . . . .</span><span class="hljs-punctuation"> :</span> <span class="hljs-string">lan</span><br>   <span class="hljs-attribute">IPv4 地址 . . . . . . . . . . . .</span><span class="hljs-punctuation"> :</span> <span class="hljs-string">192.168.3.149</span><br>   <span class="hljs-attribute">子网掩码  . . . . . . . . . . . .</span><span class="hljs-punctuation"> :</span> <span class="hljs-string">255.255.255.0</span><br>   <span class="hljs-attribute">默认网关. . . . . . . . . . . . .</span><span class="hljs-punctuation"> :</span> <span class="hljs-string">192.168.3.1</span><br></code></pre></td></tr></table></figure>
+<h3 id="创建隧道"><a href="#创建隧道" class="headerlink" title="创建隧道"></a>创建隧道</h3><blockquote>
+<p>登陆成功后，点击上方的加号创建隧道。我们选择Minecraft，选择一个朋友和你之间比较近的。右侧隧道类型筛选TCP后会显示这个界面：<br><img src="/img/natfrp/%E5%88%9B%E5%BB%BA%E9%9A%A7%E9%81%93.png" srcset="/img/loading.gif" lazyload alt="创建隧道"><br>各参数解读：</p>
+</blockquote>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs armasm">隧道名：随意<br>备注：随意<br>本地<span class="hljs-built_in">IP</span>：默认<span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>。插件版则填写需要转发设备的局域网<span class="hljs-built_in">IP</span>。<br>本地端口：填写游戏端口号，以实际游戏内显示的为准。可点击选择本地进程，选择TCP-Javaw.exe的进程。<br>远程端口：无需填写，系统自动生成。<br>自动HTTPS：默认禁用即可，联机用不到。<br>访问密码：适用于私人联机，详细可以看文档。<br>隧道自定义设置：留空。<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>默认网关就是路由器的地址。我们打开浏览器，输入这个地址，即可访问你的路由器页面。<br>进入路由器以后,我们找有关上网方式相关的设置，找到PPPOE或拨号上网，我们找到IP地址。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E8%B7%AF%E7%94%B1%E5%99%A8IP.png" srcset="/img/loading.gif" lazyload alt="路由器WanIP"><br>如果与你网站查到的一致则是公网，如果不一致则遗憾离场。</p>
+<p>创建完成后会回到软件的隧道页面，点击新出现的隧道右上角的启动按钮开启隧道。<br><img src="/img/natfrp/%E5%BC%80%E5%90%AF%E9%9A%A7%E9%81%93.png" srcset="/img/loading.gif" lazyload alt="开启隧道"><br>开启完后，在左侧找到日志，进入日志界面，找到：</p>
 </blockquote>
-<h1 id="开始联机"><a href="#开始联机" class="headerlink" title="开始联机"></a>开始联机</h1><blockquote>
-<p>你能看到这里，很显然你是拥有IPv4公网的，我们进行接下来的操作，我们首先启动游戏，然后进入存档后选择对局域网开放。这里需要记住对局域网开放时左下角弹出的端口。由于演示版本为高版本可以自定义端口，我们如果要自定义建议端口号不少于五位，避免冲突。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%AF%B9%E5%B1%80%E5%9F%9F%E7%BD%91%E5%BC%80%E6%94%BE%E6%93%8D%E4%BD%9C.png" srcset="/img/loading.gif" lazyload alt="对局域网开放"><br>开放完后我们进行接下来的操作。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">TCP</span> 隧道启动成功<br>使用 &gt;&gt;网址：端口&lt;&lt; 连接你的隧道<br>或使用节点 <span class="hljs-built_in">IP</span> 连接 (不推荐) &gt;&gt;<span class="hljs-built_in">IP</span>地址：端口&lt;&lt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>将<code>&gt;&gt;&lt;&lt;</code>之间的内容复制下来，然后发给你的朋友即可。</p>
 </blockquote>
-<h2 id="路由器操作-1"><a href="#路由器操作-1" class="headerlink" title="路由器操作"></a>路由器操作</h2><blockquote>
-<p>获取路由器的登录地址的方法已经在上方有说明，这里不过多赘述。我们进到路由器以后，找到端口转发，端口映射一类的功能。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91.png" srcset="/img/loading.gif" lazyload alt="端口转发"><br>这里有些值需要注意。IP地址为你电脑的IP地址，内部端口号必须为你游戏显示的端口号，外部端口号可以自定义，建议使用<code>25565</code>，协议为TCP，如果某些语音模组走UDP，也可添加对应UDP协议的转发。如果你是路由器拨号上网的，那么到了这一步，你的朋友就应该就可以通过你的公网IPv4地址连接到你的世界了。如果无法连接请跳转到后面的无法连接。</p>
+<h3 id="主机后续开多人的操作"><a href="#主机后续开多人的操作" class="headerlink" title="主机后续开多人的操作"></a>主机后续开多人的操作</h3><blockquote>
+<p>如果你以前使用的节点没有满载或掉线情况，只需要点击节点右上角的铅笔图标，对端口进行更改即可。朋友的IP和端口都不会更改。但最好检查日志看地址是否发生变动。<br><img src="/img/natfrp/%E9%9A%A7%E9%81%93%E6%9B%B4%E6%94%B9.png" srcset="/img/loading.gif" lazyload alt="隧道更改"><br>如果以前使用的节点已经满载或掉线，则只能重新开一个新的隧道。免费帐户只能存在两个隧道，请定期清理失效/不用的隧道。</p>
 </blockquote>
-<h2 id="光猫操作-1"><a href="#光猫操作-1" class="headerlink" title="光猫操作"></a>光猫操作</h2><blockquote>
-<p>我们需要先获取光猫分配给路由器的IP地址，这一点可以在路由器的上网方式中找到。上网方式为静态获取或DHCP，如果使用DHCP获取，建议改为静态，按照DHCP获取的值设置静态即可。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E9%9D%99%E6%80%81%E8%8E%B7%E5%8F%96.png" srcset="/img/loading.gif" lazyload alt="光猫分配给路由器的IP"><br>例如我这个猫给路由器的IP地址是192.168.2.2(大家的猫如果是192.168.1.X的则把我这个看作192.168.1.2即可。我这个是改过光猫地址的)，我们登录到光猫中，依然找端口映射/端口转发相关设置。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/%E5%85%89%E7%8C%AB%E6%98%A0%E5%B0%84%E6%93%8D%E4%BD%9C.png" srcset="/img/loading.gif" lazyload alt="光猫映射操作"><br>局域网IP我们需要填路由器的上网IP，协议依旧跟上方一致，这里的内部端口需要与上方路由器设置的外部端口一致，外部端口建议设置为25565.如果使用UDP协议，则添加对应UDP协议的转发。到这里，使用光猫拨号的你应该也能让你的朋友进入你的世界了。如果无法连接请跳转到后面的无法连接。</p>
+<h2 id="客机的操作"><a href="#客机的操作" class="headerlink" title="客机的操作"></a>客机的操作</h2><blockquote>
+<p>朋友拿到联机地址以后，在游戏内点击多人游戏，添加服务器或直接连接，粘贴朋友发给你的地址即可。<br><img src="/img/natfrp/%E5%AE%A2%E6%9C%BA%E6%BC%94%E7%A4%BA.png" srcset="/img/loading.gif" lazyload alt="客机演示"><br><img src="/img/natfrp/%E6%88%90%E5%8A%9F.png" srcset="/img/loading.gif" lazyload alt="成功"></p>
 </blockquote>
-<h1 id="无法连接"><a href="#无法连接" class="headerlink" title="无法连接"></a>无法连接</h1><h2 id="防火墙问题"><a href="#防火墙问题" class="headerlink" title="防火墙问题"></a>防火墙问题</h2><h3 id="光猫或路由器防火墙问题"><a href="#光猫或路由器防火墙问题" class="headerlink" title="光猫或路由器防火墙问题"></a>光猫或路由器防火墙问题</h3><blockquote>
-<p>光猫的防火墙可以进入光猫，找关于防火墙相关的设置进行关掉，当然有些光猫是需要超级管理员才可以进行这些操作的，如果你没有超级管理员密码则可以尝试询问运营商或当地装维人员。<br>路由器的防火墙则是在路由器设置中找到防火墙相关设置，关闭防火墙即可。</p>
+<h1 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h1><h2 id="多人游戏界面信号显示红叉"><a href="#多人游戏界面信号显示红叉" class="headerlink" title="多人游戏界面信号显示红叉"></a>多人游戏界面信号显示红叉</h2><blockquote>
+<p>如果你的上述操作都已经完成，并且你已经确认端口正确，节点没有满载或掉线。那么有可能是主机或客机的防火墙拦截了连接，我们进入控制面板，找到系统和安全，点击Windows Defender防火墙，点击关闭Windows Defender防火墙。<br><img src="/img/natfrp/Windows%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png" srcset="/img/loading.gif" lazyload alt="Windows防火墙"><br>如依然显示红叉建议更换节点。</p>
 </blockquote>
-<h3 id="电脑防火墙问题"><a href="#电脑防火墙问题" class="headerlink" title="电脑防火墙问题"></a>电脑防火墙问题</h3><blockquote>
-<p>进入控制面板，找到系统和安全，点击Windows Defender防火墙，点击关闭Windows Defender防火墙。<br><img src="/img/IPv4%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/Windows%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png" srcset="/img/loading.gif" lazyload alt="Windows防火墙"><br>如果还无法联机，建议朋友也进行这一操作。</p>
+<h2 id="多人游戏有信号，但无法进入游戏"><a href="#多人游戏有信号，但无法进入游戏" class="headerlink" title="多人游戏有信号，但无法进入游戏"></a>多人游戏有信号，但无法进入游戏</h2><blockquote>
+<p>可能是遭遇了正版验证，正版作为房主只能与正版联机，离线玩家无法进入正版玩家的游戏，但离线玩家作为房主，正版离线都可加入游戏。此时就需要用到这两个模组其中之一了：<br><a target="_blank" rel="noopener" href="https://www.mcmod.cn/class/11373.html">自定义LAN局域网联机服务器</a><br><a target="_blank" rel="noopener" href="https://www.mcmod.cn/class/2754.html">自定义局域网联机</a><br>两个模组百科页面均有详细的使用介绍。<br>如果打开聊天栏就出现闪退问题的话，尝试使用<a target="_blank" rel="noopener" href="https://www.mcmod.cn/class/6756.html">禁用聊天举报</a><br><strong><span style="color: red;ont-size: 30px">（注意：离线由于不绑定玩家唯一标识符【UUID】，很可能造成背包数据丢失，推荐下线时将所有物品存到箱子中。）</span></strong></p>
 </blockquote>
-<h2 id="正版离线问题"><a href="#正版离线问题" class="headerlink" title="正版离线问题"></a>正版离线问题</h2><blockquote>
-<p>如果你的游戏是正版，那么你需要将游戏设置为离线模式，否则离线玩家无法联机。（注意：离线由于不绑定玩家唯一标识符【UUID】，很可能造成背包数据丢失，推荐下线时将所有物品存到箱子中。）<br>需要这两个模组任选其一：<br><a target="_blank" rel="noopener" href="https://www.mcmod.cn/class/11373.html">自定义LAN局域网联机服务器</a><br><a target="_blank" rel="noopener" href="https://www.mcmod.cn/class/2754.html">自定义局域网联机</a><br>两个模组百科页面均有详细的使用介绍介绍。<br>如果打开聊天栏就出现闪退问题的话，尝试使用<a target="_blank" rel="noopener" href="https://www.mcmod.cn/class/6756.html">禁用聊天举报</a> </p>
+<h2 id="玩一段时间就掉线"><a href="#玩一段时间就掉线" class="headerlink" title="玩一段时间就掉线"></a>玩一段时间就掉线</h2><blockquote>
+<p>可能是带宽不足或节点不稳定导致的问题。尝试更换节点或成为会员，看问题是否改善。</p>
+</blockquote>
+<h2 id="整合包游玩时出现崩溃"><a href="#整合包游玩时出现崩溃" class="headerlink" title="整合包游玩时出现崩溃"></a>整合包游玩时出现崩溃</h2><blockquote>
+<p>多半是内存不足或整合包本身模组兼容或优化问题，尝试更换整合包或分配更大内存看是否会有此类问题。小整合包建议内存起步4G，开光影，材质的话适当多分点。大型整合包，如ATM系列建议起步8G，如果内存分配无法解决问题，可前往百科页或整合包相关页面看是否有人遇到同样的问题。另外jvm虚拟机内存过大也会导致崩溃，有时启动器启动报错内存过少不一定是你给游戏分的内存太少，分多了也会触发这一提示。<br><strong><span style="color: red;">注意：游戏分配内存不能超过当前系统的物理内存大小（16G运行内存的电脑不要分超过14G给游戏，实际情况可能更极端），游戏内存分配过高会导致系统异常卡顿甚至蓝屏死机。</span></strong></p>
 </blockquote>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><blockquote>
 <p>教程到这里就已经结束了，你和你的朋友应该已经顺利连上机了，如果此教程对你有帮助的话，别忘了点开上方的视频给我一个一键三联哦！这样是对我最大的支持！！！我是灭天神话_666，咱们下篇文章再见！！！</p>
@@ -359,13 +371,13 @@
       
         <a href="/tags/Minecraft/" class="print-no-link">#Minecraft</a>
       
-        <a href="/tags/%E5%85%AC%E7%BD%91/" class="print-no-link">#公网</a>
-      
-        <a href="/tags/IPv4/" class="print-no-link">#IPv4</a>
-      
         <a href="/tags/%E8%81%94%E6%9C%BA/" class="print-no-link">#联机</a>
       
         <a href="/tags/%E6%95%99%E7%A8%8B/" class="print-no-link">#教程</a>
+      
+        <a href="/tags/natrfp/" class="print-no-link">#natrfp</a>
+      
+        <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="print-no-link">#内网穿透</a>
       
     </div>
   
@@ -377,8 +389,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>我的世界IPv4公网联机教程</div>
-      <div>https://blog.mietianshenhua.online/2025/05/24/IPv4公网联机/</div>
+      <div>NatFrp内网穿透实现我的世界联机</div>
+      <div>https://blog.mietianshenhua.online/2025/06/09/natfrp联机教程/</div>
     </div>
     <div class="license-meta">
       
@@ -390,7 +402,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年5月24日</div>
+          <div>2025年6月9日</div>
         </div>
       
       
@@ -422,18 +434,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/05/25/IPv6%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/" title="我的世界IPv6公网联机教程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">我的世界IPv6公网联机教程</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/27/Windows%E7%9A%84%E5%AE%89%E8%A3%85/" title="Windows的下载和安装[PE工具装机篇]">
-                        <span class="hidden-mobile">Windows的下载和安装[PE工具装机篇]</span>
+                      <a href="/2025/05/25/IPv6%E5%85%AC%E7%BD%91%E8%81%94%E6%9C%BA/" title="我的世界IPv6公网联机教程">
+                        <span class="hidden-mobile">我的世界IPv6公网联机教程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
