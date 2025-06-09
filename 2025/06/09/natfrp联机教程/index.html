@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/%E6%88%90%E5%8A%9F.png">
 <meta property="og:image" content="https://blog.mietianshenhua.online/img/natfrp/Windows%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png">
 <meta property="article:published_time" content="2025-06-09T07:44:00.000Z">
-<meta property="article:modified_time" content="2025-06-09T16:55:46.387Z">
+<meta property="article:modified_time" content="2025-06-09T17:24:22.533Z">
 <meta property="article:author" content="灭天神话_666">
 <meta property="article:tag" content="我的世界">
 <meta property="article:tag" content="Minecraft">
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          2.2k 字
         
       </span>
     
@@ -288,13 +288,13 @@
 <p><strong><span style="color: red;">本文章仅教学natfrp的使用方法，与樱花内网穿透没有任何利益和技术相关往来或合作。如遇到樱花软件或使用上的问题，请寻求官方帮助！！！UP没有义务也没有办法解决相关问题。</span></strong><br><strong><span style="color:rgb(9,255,0)">本教程全程使用Windows10 21H2版作为演示,教程中的界面可能会与你看到文章时有所不同，请以实际软件界面为准。如软件界面变动请自行对照教程相关参数进行填写。</span></strong><br><strong>本教程不适用于部分校园网。校园网不允许内网穿透相关流量出站的话，什么内网穿透都是出不去的。</strong><br><em><strong>视频教程地址：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1DdF4eJEBm/">点击跳转</a></strong></em></p>
 </blockquote>
 <h1 id="什么是内网穿透"><a href="#什么是内网穿透" class="headerlink" title="什么是内网穿透"></a>什么是内网穿透</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/1897970736381026525">内网穿透</a>，顾名思义，就是将内网的设备或数据，映射到公网上，让公网上的设备可以访问到这些内网设备。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/1897970736381026525">内网穿透</a>，也即NAT穿透，进行NAT穿透是为了使具有某一个特定源IP地址和源端口号的数据包不被NAT设备屏蔽而正确路由到内网主机。简而言之就是将特定的内网主机的某个端口映射到公网上，使公网用户可以访问到内网主机的特定端口。</p>
 </blockquote>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="注册网站-实名-获取流量"><a href="#注册网站-实名-获取流量" class="headerlink" title="注册网站/实名/获取流量"></a>注册网站/实名/获取流量</h2><blockquote>
-<p><em><strong>natfrp官网：<a target="_blank" rel="noopener" href="https://www.natfrp.com/">点击跳转</a></strong></em><br>进入官网后点击注册账号，填写必要信息后点击注册。<br><img src="/img/natfrp/natfrp%E6%B3%A8%E5%86%8C.png" srcset="/img/loading.gif" lazyload alt="natfrp注册页"><br>填写完相关信息后点击注册后，然后回到主页，点击管理面板。登录你刚才注册的账号后。点击上方的用户，实名认证进行实名。不实名你是无法使用它的服务的。实名需要支付宝支付一元。<br><img src="/img/natfrp/%E5%AE%9E%E5%90%8D.png" srcset="/img/loading.gif" lazyload alt="实名"><br><strong><span style="color: red;">实名必须年满18岁</span></strong><br>实名完后回到主页，免费帐户的话可以通过右侧的签到来获取可用流量。免费帐户只有10Mbps的带宽和两条隧道。对于原版联机和部分整合包完全够用。<br><img src="/img/natfrp/%E7%AD%BE%E5%88%B0.png" srcset="/img/loading.gif" lazyload alt="natfrp注册页"><br>如果你感觉流量，节点，带宽不够你的使用或有更好的体验，可以选择付费套餐。这里不过多赘述。<br><strong><span style="color: red;">注意：流量消耗取决于你游玩的内容，原版是很省流的，整合包的话会流量消耗会稍微多一些，部分模组也会需要频繁的交换数据导致流量跑得很快。这些都属于正常现象。</span></strong></p>
+<p><em><strong>natfrp官网：<a target="_blank" rel="noopener" href="https://www.natfrp.com/">点击跳转</a></strong></em><br>进入官网后点击注册账号，填写必要信息后点击注册。<br><img src="/img/natfrp/natfrp%E6%B3%A8%E5%86%8C.png" srcset="/img/loading.gif" lazyload alt="natfrp注册页"><br>填写完相关信息后点击注册后，然后回到主页，点击管理面板。登录你刚才注册的账号。点击上方的用户，实名认证进行实名。不实名你是无法使用它的服务的。实名需要支付宝支付一元。<br><img src="/img/natfrp/%E5%AE%9E%E5%90%8D.png" srcset="/img/loading.gif" lazyload alt="实名"><br><strong><span style="color: red;">实名必须年满18岁</span></strong><br>实名完后回到主页，免费帐户只有10Mbps的带宽和两条隧道的限制。对于原版联机和部分整合包完全够用。需要流量可以点击右侧的签到来获取可用流量。<br><img src="/img/natfrp/%E7%AD%BE%E5%88%B0.png" srcset="/img/loading.gif" lazyload alt="natfrp注册页"><br>如果你感觉流量，隧道，带宽不够或想要更好的体验，可以选择付费套餐。这里不过多赘述。<br><strong><span style="color: red;">注意：流量消耗取决于你游玩的内容，原版是很省流的，整合包会流量消耗稍微多一些，部分模组也会需要频繁的交换数据导致流量跑得很快。这些都属于正常现象。</span></strong></p>
 </blockquote>
 <h2 id="软件下载-安装"><a href="#软件下载-安装" class="headerlink" title="软件下载/安装"></a>软件下载/安装</h2><blockquote>
-<p>点击页面上方的服务，选择软件下载。这里以Windows为例：<br><img src="/img/natfrp/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD.png" srcset="/img/loading.gif" lazyload alt="软件下载"><br>如果遇到无法下载的问题请按照页面提示操作。下载下来被杀毒软件删掉的建议先暂时关闭杀毒。<br><strong><span style="color: red;">注意：软件下载不要使用第三方下载接管下载（IDM,NDM,迅雷等）</span></strong><br>下载下来以后双击运行安装程序进行安装，全程下一步即可（无法更改软件安装路径，没有自启动勾选）</p>
+<p>点击页面上方的服务，选择软件下载。这里以Windows为例：<br><img src="/img/natfrp/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD.png" srcset="/img/loading.gif" lazyload alt="软件下载"><br>如果遇到无法下载的问题请按照页面提示操作。下载下来被杀毒软件删掉的建议先暂时关闭杀毒。<br><strong><span style="color: red;">注意：软件下载不要使用第三方下载接管（IDM,NDM,迅雷等）</span></strong><br>双击运行下载下来的安装程序进行安装，全程下一步即可（无法更改软件安装路径，没有自启动勾选）</p>
 </blockquote>
 <h1 id="开始联机操作"><a href="#开始联机操作" class="headerlink" title="开始联机操作"></a>开始联机操作</h1><h2 id="主机的操作"><a href="#主机的操作" class="headerlink" title="主机的操作"></a>主机的操作</h2><h3 id="登陆软件"><a href="#登陆软件" class="headerlink" title="登陆软件"></a>登陆软件</h3><blockquote>
 <p>我们回到官网首页，找到复制访问密钥，我们点击后就会复制密钥，回到软件后粘贴我们复制的密钥，点击登录即可登录成功。<br><img src="/img/natfrp/%E7%99%BB%E9%99%86%E5%89%8D.png" srcset="/img/loading.gif" lazyload alt="登陆前"><br><strong><span style="color: red;">注意：请不要将自己的密钥交给不信任的人，出问题了平台找的是在平台实名的用户。如用该服务搭建不合规或违法内容，轻则账号封禁，重则局子喝茶。如密钥已经告诉过他人，可前往用户-用户信息页找到刷新访问密钥。使用旧密钥登陆的客户端都将被强制下线。</span></strong><br><img src="/img/natfrp/%E7%99%BB%E9%99%86%E5%90%8E.png" srcset="/img/loading.gif" lazyload alt="登陆后"></p>
@@ -303,7 +303,7 @@
 <p>我们打开想要联机的整合包或版本，启动后进入存档，ESC选择对局域网开放，如果弹出如下界面建议两项全打勾。<br><img src="/img/natfrp/%E8%81%94%E7%BD%91%E8%AF%B7%E6%B1%82.png" srcset="/img/loading.gif" lazyload alt="联网请求"><br>对局域网开放后，游戏左下角会弹出开放后的端口号。主机的游戏操作到这里就已经结束了。<br><img src="/img/natfrp/%E7%AB%AF%E5%8F%A3.png" srcset="/img/loading.gif" lazyload alt="端口"></p>
 </blockquote>
 <h3 id="创建隧道"><a href="#创建隧道" class="headerlink" title="创建隧道"></a>创建隧道</h3><blockquote>
-<p>登陆成功后，点击上方的加号创建隧道。我们选择Minecraft，选择一个朋友和你之间比较近的。右侧隧道类型筛选TCP后会显示这个界面：<br><img src="/img/natfrp/%E5%88%9B%E5%BB%BA%E9%9A%A7%E9%81%93.png" srcset="/img/loading.gif" lazyload alt="创建隧道"><br>各参数解读：</p>
+<p>登陆成功后，点击上方的加号创建隧道。我们选择Minecraft，选择一个朋友和你之间比较近的节点。右侧隧道类型筛选TCP后会显示这个界面：<br><img src="/img/natfrp/%E5%88%9B%E5%BB%BA%E9%9A%A7%E9%81%93.png" srcset="/img/loading.gif" lazyload alt="创建隧道"><br>各参数解读：</p>
 </blockquote>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs armasm">隧道名：随意<br>备注：随意<br>本地<span class="hljs-built_in">IP</span>：默认<span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>。插件版则填写需要转发设备的局域网<span class="hljs-built_in">IP</span>。<br>本地端口：填写游戏端口号，以实际游戏内显示的为准。可点击选择本地进程，选择TCP-Javaw.exe的进程。<br>远程端口：无需填写，系统自动生成。<br>自动HTTPS：默认禁用即可，联机用不到。<br>访问密码：适用于私人联机，详细可以看文档。<br>隧道自定义设置：留空。<br></code></pre></td></tr></table></figure>
 <blockquote>
@@ -314,19 +314,19 @@
 <p>将<code>&gt;&gt;&lt;&lt;</code>之间的内容复制下来，然后发给你的朋友即可。</p>
 </blockquote>
 <h3 id="主机后续开多人的操作"><a href="#主机后续开多人的操作" class="headerlink" title="主机后续开多人的操作"></a>主机后续开多人的操作</h3><blockquote>
-<p>如果你以前使用的节点没有满载或掉线情况，只需要点击节点的铅笔图标，对端口进行更改即可。朋友的IP和端口都不会更改。但最好检查日志看地址是否发生变动。<br><img src="/img/natfrp/%E9%9A%A7%E9%81%93%E6%9B%B4%E6%94%B9.png" srcset="/img/loading.gif" lazyload alt="隧道更改"><br>如果以前使用的节点已经满载或掉线，则只能重新开一个新的隧道。免费帐户只能存在两个隧道，请定期清理失效/不用的隧道。</p>
+<p>如果你以前使用的当前隧道的节点没有满载或离线情况，只需要点击隧道的铅笔图标，对端口进行更改即可。朋友的IP和端口都不会更改。但最好检查日志看地址是否发生变动。<br><img src="/img/natfrp/%E9%9A%A7%E9%81%93%E6%9B%B4%E6%94%B9.png" srcset="/img/loading.gif" lazyload alt="隧道更改"><br>如果以前使用的隧道的节点已经满载或离线，则只能重新开一个新的隧道来选择新的节点。免费帐户只能存在两个隧道，请定期清理失效/不用的隧道。</p>
 </blockquote>
 <h2 id="客机的操作"><a href="#客机的操作" class="headerlink" title="客机的操作"></a>客机的操作</h2><blockquote>
-<p>朋友拿到联机地址以后，在游戏内点击多人游戏，添加服务器或直接连接，粘贴朋友发给你的地址即可。<br><img src="/img/natfrp/%E5%AE%A2%E6%9C%BA%E6%BC%94%E7%A4%BA.png" srcset="/img/loading.gif" lazyload alt="客机演示"><br><img src="/img/natfrp/%E6%88%90%E5%8A%9F.png" srcset="/img/loading.gif" lazyload alt="成功"></p>
+<p>朋友拿到联机地址以后，在游戏内点击多人游戏，添加服务器或直接连接，粘贴朋友发给你的地址即可进行联机。<br><img src="/img/natfrp/%E5%AE%A2%E6%9C%BA%E6%BC%94%E7%A4%BA.png" srcset="/img/loading.gif" lazyload alt="客机演示"><br><img src="/img/natfrp/%E6%88%90%E5%8A%9F.png" srcset="/img/loading.gif" lazyload alt="成功"></p>
 </blockquote>
 <h1 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h1><h2 id="多人游戏界面信号显示红叉"><a href="#多人游戏界面信号显示红叉" class="headerlink" title="多人游戏界面信号显示红叉"></a>多人游戏界面信号显示红叉</h2><blockquote>
-<p>如果你的上述操作都已经完成，并且你已经确认端口正确，节点没有满载或掉线。那么有可能是主机或客机的防火墙拦截了连接，我们进入控制面板，找到系统和安全，点击Windows Defender防火墙，点击关闭Windows Defender防火墙。<br><img src="/img/natfrp/Windows%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png" srcset="/img/loading.gif" lazyload alt="Windows防火墙"><br>如依然显示红叉建议更换节点。</p>
+<p>如果你的上述操作都已经完成，并且你已经确认端口正确，隧道使用的节点没有满载或离线等问题。那么有可能是主机或客机的防火墙拦截了连接，我们进入控制面板，找到系统和安全，点击Windows Defender防火墙，点击关闭Windows Defender防火墙。<br><img src="/img/natfrp/Windows%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE.png" srcset="/img/loading.gif" lazyload alt="Windows防火墙"><br>如依然显示红叉建议更换节点。</p>
 </blockquote>
 <h2 id="多人游戏有信号，但无法进入游戏"><a href="#多人游戏有信号，但无法进入游戏" class="headerlink" title="多人游戏有信号，但无法进入游戏"></a>多人游戏有信号，但无法进入游戏</h2><blockquote>
 <p>可能是遭遇了正版验证，正版作为房主只能与正版联机，离线玩家无法进入正版玩家的游戏，但离线玩家作为房主，正版离线都可加入游戏。此时就需要用到这两个模组其中之一了：<br><a target="_blank" rel="noopener" href="https://www.mcmod.cn/class/11373.html">自定义LAN局域网联机服务器</a><br><a target="_blank" rel="noopener" href="https://www.mcmod.cn/class/2754.html">自定义局域网联机</a><br>两个模组百科页面均有详细的使用介绍。<br>如果打开聊天栏就出现闪退问题的话，尝试使用<a target="_blank" rel="noopener" href="https://www.mcmod.cn/class/6756.html">禁用聊天举报</a><br><strong><span style="color: red;ont-size: 30px">（注意：离线由于不绑定玩家唯一标识符【UUID】，很可能造成背包数据丢失，推荐下线时将所有物品存到箱子中。）</span></strong></p>
 </blockquote>
 <h2 id="玩一段时间就掉线"><a href="#玩一段时间就掉线" class="headerlink" title="玩一段时间就掉线"></a>玩一段时间就掉线</h2><blockquote>
-<p>可能是带宽不足或节点不稳定导致的问题。尝试更换节点或成为会员，看问题是否改善。</p>
+<p>可能是带宽不足或隧道使用的节点不稳定导致的问题。尝试更换隧道使用的节点或成为会员，看问题是否改善。</p>
 </blockquote>
 <h2 id="整合包游玩时出现崩溃"><a href="#整合包游玩时出现崩溃" class="headerlink" title="整合包游玩时出现崩溃"></a>整合包游玩时出现崩溃</h2><blockquote>
 <p>多半是内存不足或整合包本身模组兼容或优化问题，尝试更换整合包或分配更大内存看是否会有此类问题。小整合包建议内存起步4G，开光影，材质的话适当多分点。大型整合包，如ATM系列建议起步8G，如果内存分配无法解决问题，可前往百科页或整合包相关页面看是否有人遇到同样的问题。另外jvm虚拟机内存过大也会导致崩溃，有时启动器启动报错内存过少不一定是你给游戏分的内存太少，分多了也会触发这一提示。<br><strong><span style="color: red;">注意：游戏分配内存不能超过当前系统的物理内存大小（16G运行内存的电脑不要分超过14G给游戏，实际情况可能更极端），游戏内存分配过高会导致系统异常卡顿甚至蓝屏死机。</span></strong></p>
